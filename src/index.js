@@ -49,12 +49,13 @@ fetchBreeds()
     console.log(err);
   });
 select.addEventListener('change', onselectBreed);
+
 function onselectBreed(event) {
   loader.classList.replace('is-hidden', 'loader');
   select.classList.add('is-hidden');
   catInfo.classList.add('is-hidden');
 
-  const breedId = event.currentTarget.value;
+  let breedId = event.currentTarget.value;
 
   fetchCatByBreed(breedId)
     .then(data => {
